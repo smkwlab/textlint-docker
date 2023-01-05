@@ -13,9 +13,9 @@ jobs:
   main:
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: read
-      packages: write 
+#    permissions:
+#      contents: read
+#      packages: write
 
     steps:
     # 2. setup variables

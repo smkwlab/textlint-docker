@@ -1,7 +1,7 @@
 # https://qiita.com/fudekun/items/0dad3f2251cca992d7d4
 # https://takuya-1st.hatenablog.jp/entry/2021/09/27/134200
 
-name: docker build
+name: build and push container image 
 
 # 1. Trigger
 on:

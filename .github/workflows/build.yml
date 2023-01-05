@@ -12,8 +12,11 @@ on:
 jobs:
   main:
     runs-on: ubuntu-latest
+
+    permissions:
+      packages: write 
+
     steps:
- 
     # 2. setup variables
     - uses: FranzDiebold/github-env-vars-action@v2
     - name: Get current date
@@ -45,7 +48,8 @@ jobs:
       with:
         context: .
         file: ./Dockerfile
-        platforms: linux/amd64,linux/arm/v7,linux/arm64
+#        platforms: linux/amd64,linux/arm/v7,linux/arm64
+        platforms: linux/amd64,linux/arm64
         push: true
         # 7. nameing
         tags: |

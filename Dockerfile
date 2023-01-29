@@ -1,16 +1,13 @@
 FROM alpine:latest
 
+ENV PATH=/npm/node_modules/.bin:$PATH
 RUN apk --update-cache add \
         openssh \
         git \
-        npm && \
-    npm install -g textlint \
-        textlint-rule-preset-ja-technical-writing \
-        textlint-rule-preset-ja-spacing \
-        textlint-rule-no-mix-dearu-desumasu \
-        textlint-filter-rule-comments \
-        textlint-filter-rule-allowlist \
-        textlint-plugin-html \
-        textlint-plugin-latex2e
+        npm
+
+WORKDIR /npm
+COPY ["package.json", "package-lock.json", "/npm"]
+RUN npm install /npm
 
 WORKDIR /workdir
